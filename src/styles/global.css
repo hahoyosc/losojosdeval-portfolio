@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap");
+@import "tailwindcss";
+
+:root {
+  --carbon: #1c1c1e;
+  --earth: #2a2a2c;
+  --red: #c84b2f;
+  --gold: #c8922a;
+  --cream: #f0eae0;
+  --muted: #6a6560;
+  --dim: rgba(240, 234, 224, 0.06);
+  --border: rgba(240, 234, 224, 0.11);
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 400ms;
+  animation-timing-function: ease-out;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--carbon);
+  color: var(--cream);
+  font-family: "DM Sans", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.cormorant-garamond-main-headers {
+  font-family: "Cormorant Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cormorant-garamond-normal {
+  font-family: "Cormorant Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+}
+
+.cormorant-garamond-italic {
+  font-family: "Cormorant Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: italic;
+}

@@ -1,0 +1,126 @@
+---
+import { render, type CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+
+interface Props {
+  item: CollectionEntry<"works">;
+}
+const { item } = Astro.props;
+const { Content } = await render(item);
+---
+
+<dialog
+  id={`work-modal-${item.id}`}
+  class="hidden open:flex flex-col backdrop:bg-black/90 bg-transparent text-(--cream) w-screen h-screen max-w-none m-0 overflow-visible"
+>
+  <button
+    data-close
+    aria-label="Cerrar"
+    class="absolute top-10 right-10 z-30 text-2xl text-(--cream) hover:text-(--red) cursor-pointer"
+  >
+    ×
+  </button>
+
+  <div
+    class="relative w-full flex-1 min-h-0 flex items-center justify-center overflow-hidden pt-10"
+    data-carousel
+  >
+    {
+      (item.data.images ?? []).map((img, i) => (
+        <div
+          class:list={[
+            "absolute rounded-xl overflow-hidden shadow-2xl transition-all duration-500 ease-out select-none",
+            img.orientation === "landscape"
+              ? "w-80 sm:w-md md:w-136 aspect-4/3"
+              : "w-64 sm:w-80 md:w-96 aspect-3/4",
+          ]}
+          data-slide
+          data-index={i}
+        >
+          <Image
+            src={img.src}
+            alt={item.data.title}
+            width={900}
+            height={img.orientation === "landscape" ? 675 : 1200}
+            loading={i <= 1 ? "eager" : "lazy"}
+            class="w-full h-full object-cover"
+          />
+        </div>
+      ))
+    }
+  </div>
+
+  <div
+    class="relative mx-6 sm:mx-10 mb-18 shrink-0 bg-(--carbon)/95 backdrop-blur-md border border-(--border) rounded-sm p-6 z-20 overflow-y-auto max-h-48"
+  >
+    <h3 class="cormorant-garamond-normal text-3xl font-light mb-1">
+      {item.data.title}
+    </h3>
+    <p class="text-xs tracking-widest uppercase text-(--red) mb-4">
+      {item.data.subtitle} · {item.data.year}
+    </p>
+    <div class="text-sm text-(--muted) leading-7">
+      <Content />
+    </div>
+  </div>
+</dialog>
+
+<script>
+  import { wireDialogClose } from "../scripts/modalTransitions";
+
+  document
+    .querySelectorAll<HTMLDialogElement>("dialog[id^='work-modal-']")
+    .forEach((dialog) => {
+      const slides = dialog.querySelectorAll<HTMLElement>("[data-slide]");
+      const carousel = dialog.querySelector<HTMLElement>("[data-carousel]");
+      let current = 0;
+
+      function layout(instant = false) {
+        slides.forEach((slide, i) => {
+          const offset = i - current;
+          const abs = Math.abs(offset);
+          const translate = offset * 70;
+          const scale = offset === 0 ? 1 : abs === 1 ? 0.75 : 0.6;
+          const opacity =
+            abs <= 2 ? (offset === 0 ? 1 : abs === 1 ? 0.75 : 0.35) : 0;
+          const brightness = offset === 0 ? 1 : 0.5;
+
+          if (instant) slide.style.transitionDuration = "0s";
+
+          slide.style.transform = `translateX(${translate}%) scale(${scale})`;
+          slide.style.zIndex = String(10 - abs);
+          slide.style.opacity = String(opacity);
+          slide.style.filter = `brightness(${brightness})`;
+          slide.style.pointerEvents = abs <= 2 ? "auto" : "none";
+          slide.style.cursor = offset === 0 ? "default" : "pointer";
+
+          void slide.offsetHeight;
+
+          if (instant) {
+            slide.style.transitionDuration = "";
+          }
+        });
+      }
+
+      function show(i: number) {
+        current = (i + slides.length) % slides.length;
+        layout();
+      }
+
+      (dialog as HTMLDialogElement & { onModalOpen?: () => void }).onModalOpen =
+        () => layout(true);
+
+      slides.forEach((slide, i) => {
+        slide.addEventListener("click", () => {
+          if (i !== current) show(i);
+        });
+      });
+
+      const close = wireDialogClose(dialog);
+      carousel?.addEventListener("click", (e) => {
+        if (e.target === carousel) close();
+      });
+
+      layout(true);
+    });
+</script>
