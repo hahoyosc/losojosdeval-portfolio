@@ -1,7 +1,9 @@
 ---
-title: By Andrea Salas
+title:
+  es: By Andrea Salas
 category: photo
-subtitle: Product photography
+subtitle:
+  es: Product photography
 year: 2025
 images:
   - src: ../../assets/work/andrea-salas/img-0575.webp
@@ -20,6 +22,11 @@ images:
     orientation: portrait
   - src: ../../assets/work/andrea-salas/img-0617.webp
     orientation: portrait
+description:
+  es: >-
+    Fotografía de producto enfocada en resaltar la esencia de cada pieza mediante una
+    dirección de arte limpia, una iluminación precisa y una composición que prioriza
+    los detalles y la calidad del producto.
+  en: >-
+    Product photography focused on highlighting the essence of each piece through clean art direction, precise lighting, and compositions that emphasize detail and craftsmanship.
 ---
-
-Fotografía de producto enfocada en resaltar la esencia de cada pieza mediante una dirección de arte limpia, una iluminacion precisa y una composición que prioriza los detalles y la calidad del producto.

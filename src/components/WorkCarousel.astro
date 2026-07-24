@@ -1,12 +1,13 @@
 ---
-import { render, type CollectionEntry } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 import { Image } from "astro:assets";
+import { getLangFromUrl, localize } from "../i18n/utils";
 
 interface Props {
   item: CollectionEntry<"works">;
 }
 const { item } = Astro.props;
-const { Content } = await render(item);
+const lang = getLangFromUrl(Astro.url);
 ---
 
 <dialog
@@ -15,7 +16,7 @@ const { Content } = await render(item);
 >
   <button
     data-close
-    aria-label="Cerrar"
+    aria-label="Close"
     class="absolute top-10 right-10 z-30 text-2xl text-(--cream) hover:text-(--red) cursor-pointer"
   >
     ×
@@ -39,7 +40,7 @@ const { Content } = await render(item);
         >
           <Image
             src={img.src}
-            alt={item.data.title}
+            alt={localize(item.data.title, lang)}
             width={900}
             height={img.orientation === "landscape" ? 675 : 1200}
             loading={i <= 1 ? "eager" : "lazy"}
@@ -54,13 +55,17 @@ const { Content } = await render(item);
     class="relative mx-6 sm:mx-10 mb-18 shrink-0 bg-(--carbon)/95 backdrop-blur-md border border-(--border) rounded-sm p-6 z-20 overflow-y-auto max-h-48"
   >
     <h3 class="cormorant-garamond-normal text-3xl font-light mb-1">
-      {item.data.title}
+      {localize(item.data.title, lang)}
     </h3>
     <p class="text-xs tracking-widest uppercase text-(--red) mb-4">
-      {item.data.subtitle} · {item.data.year}
+      {localize(item.data.subtitle, lang)} · {item.data.year}
     </p>
     <div class="text-sm text-(--muted) leading-7">
-      <Content />
+      {
+        item.data.description && (
+          <p set:html={localize(item.data.description, lang)} />
+        )
+      }
     </div>
   </div>
 </dialog>

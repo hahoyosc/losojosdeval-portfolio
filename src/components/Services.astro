@@ -1,64 +1,55 @@
+---
+const services = [
+  {
+    discipline: "Fotografía",
+    title: "Retrato & editorial",
+    description:
+      "Sesiones personales y para marcas que quieren imágenes con criterio propio. Sin poses genéricas. Sin fondos blancos sin alma.",
+  },
+  {
+    discipline: "Video",
+    title: "Reels & contenido",
+    description:
+      "Producción de reels y piezas para redes. Desde la idea hasta la edición. Contenido que se ve propio, no de plantilla.",
+  },
+  {
+    discipline: "Diseño",
+    title: "Identidad & editorial",
+    description:
+      "Diseño gráfico para marcas, publicaciones y proyectos independientes. Piezas que tienen un punto de vista, no solo un formato.",
+  },
+];
+---
+
 <section class="border-t border-(--border) py-24 px-12" id="services">
   <div class="lg:max-w-5xl mx-auto">
-  <p
-    data-reveal
-    class="opacity-0 translate-y-8 transition-all duration-700 ease-out
-    data-visible:opacity-100 data-visible:translate-y-0
+    <p
+      data-reveal
+      class="reveal
     text-xs tracking-widest uppercase text-(--red) mb-10 flex items-center gap-3"
-  >
-    Qué ofrezco
-    <span class="flex-1 max-w-14 h-0.5 bg-[#C84A2F]/35"></span>
-  </p>
-  <div
-    data-reveal
-    class="border border-(--border) grid grid-cols-1 md:grid-cols-3 gap-0.5 bg-(--border)
-    opacity-0 translate-y-8 transition-all duration-700 ease-out
-    data-visible:opacity-100 data-visible:translate-y-0"
-  >
-    <div
-      class="bg-(--carbon) py-10 px-8 transition-colors duration-300 hover:bg-[#222224]"
     >
-      <p class="text-xs tracking-widest uppercase text-(--gold) mb-5">
-        Fotografía
-      </p>
-      <h3
-        class="cormorant-garamond-normal text-2xl font-normal text-(--cream) mb-3 leading-5"
-      >
-        Retrato & editorial
-      </h3>
-      <p class="text-sm text-(--muted) leading-7">
-        Sesiones personales y para marcas que quieren imágenes con criterio
-        propio. Sin poses genéricas. Sin fondos blancos sin alma.
-      </p>
-    </div>
+      Qué ofrezco
+      <span class="flex-1 max-w-14 h-0.5 bg-[#C84A2F]/35"></span>
+    </p>
     <div
-      class="bg-(--carbon) py-10 px-8 transition-colors duration-300 hover:bg-[#222224]"
+      data-reveal
+      class="border border-(--border) grid grid-cols-1 md:grid-cols-3 gap-0.5 bg-(--border) reveal"
     >
-      <p class="text-xs tracking-widest uppercase text-(--gold) mb-5">Video</p>
-      <h3
-        class="cormorant-garamond-normal text-2xl font-normal text-(--cream) mb-3 leading-5"
-      >
-        Reels & contenido
-      </h3>
-      <p class="text-sm text-(--muted) leading-7">
-        Producción de reels y piezas para redes. Desde la idea hasta la edición.
-        Contenido que se ve propio, no de plantilla.
-      </p>
+      {
+        services.map((service) => (
+          <div class="bg-(--carbon) py-10 px-8 transition-colors duration-300 hover:bg-[#222224]">
+            <p class="text-xs tracking-widest uppercase text-(--gold) mb-5">
+              {service.discipline}
+            </p>
+            <h3 class="cormorant-garamond-normal text-2xl font-normal text-(--cream) mb-3 leading-5">
+              {service.title}
+            </h3>
+            <p class="text-sm text-(--muted) leading-7">
+              {service.description}
+            </p>
+          </div>
+        ))
+      }
     </div>
-    <div
-      class="bg-(--carbon) py-10 px-8 transition-colors duration-300 hover:bg-[#222224]"
-    >
-      <p class="text-xs tracking-widest uppercase text-(--gold) mb-5">Diseño</p>
-      <h3
-        class="cormorant-garamond-normal text-2xl font-normal text-(--cream) mb-3 leading-5"
-      >
-        Identidad & editorial
-      </h3>
-      <p class="text-sm text-(--muted) leading-7">
-        Diseño gráfico para marcas, publicaciones y proyectos independientes.
-        Piezas que tienen un punto de vista, no solo un formato.
-      </p>
-    </div>
-  </div>
   </div>
 </section>

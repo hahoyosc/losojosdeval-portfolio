@@ -6,8 +6,9 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
-    server: {
-      allowedHosts: ["ref-perl-that-view.trycloudflare.com"],
-    },
+  },
+  i18n: {
+    locales: ["es", "en"],
+    defaultLocale: "es",
   },
 });

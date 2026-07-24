@@ -1,6 +1,3 @@
-// Utilidades compartidas para abrir/cerrar <dialog> con View Transitions,
-// evitando el "ghost" de transiciones que se pisan entre sí.
-
 declare global {
   interface Window {
     __activeViewTransition?: ViewTransition | null;

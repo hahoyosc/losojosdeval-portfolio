@@ -1,3 +1,10 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
 <nav
   class="fixed inset-x-0 top-0 py-6 px-12 bg-(--carbon)/80 backdrop-blur-lg border-b border-(--border) z-10"
 >
@@ -7,33 +14,33 @@
       class="cormorant-garamond-main-headers text-base font-normal tracking-widest text-(--cream) no-underline uppercase"
       >Los ojos de Val</a
     >
-    <ul class="hidden md:flex space-x-10 list-none">
+    <ul class="hidden md:flex space-x-10 list-none items-center">
       <li>
         <a
           href="#work"
           class="text-xs tracking-widest uppercase text-(--muted) no-underline transition-colors duration-200 hover:text-(--cream)"
-          >Trabajo</a
+          >{t("nav.work")}</a
         >
       </li>
       <li>
         <a
           href="#about-me"
           class="text-xs tracking-widest uppercase text-(--muted) no-underline transition-colors duration-200 hover:text-(--cream)"
-          >Sobre mí</a
+          >{t("nav.about")}</a
         >
       </li>
       <li>
         <a
           href="#services"
           class="text-xs tracking-widest uppercase text-(--muted) no-underline transition-colors duration-200 hover:text-(--cream)"
-          >Servicios</a
+          >{t("nav.services")}</a
         >
       </li>
       <li>
         <a
           href="#contact"
           class="text-xs tracking-widest uppercase text-(--muted) no-underline transition-colors duration-200 hover:text-(--cream)"
-          >Contacto</a
+          >{t("nav.contact")}</a
         >
       </li>
     </ul>

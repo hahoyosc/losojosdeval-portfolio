@@ -1,3 +1,10 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
 <section
   class="min-h-screen flex flex-col justify-end pb-20 px-12 relative overflow-hidden"
 >
@@ -10,7 +17,7 @@
   </div>
   <div class="w-full lg:max-w-5xl mx-auto">
     <p class="text-xs tracking-widest uppercase text-(--red) mb-6">
-      Medellín, Colombia
+      {t("hero.location")}
     </p>
     <h1
       class="cormorant-garamond-main-headers text-9xl font-light leading-none tracking-tight text-(--cream) relative inline-block"
@@ -30,34 +37,34 @@
     >
       <span
         class="text-xs tracking-widest uppercase text-(--muted)"
-        role="listitem">Fotografía</span
+        role="listitem">{t("hero.discipline.photo")}</span
       >
       <span
         class="w-1 h-1 rounded-full bg-(--red) opacity-50"
         aria-hidden="true"></span>
       <span
         class="text-xs tracking-widest uppercase text-(--muted)"
-        role="listitem">Video</span
+        role="listitem">{t("hero.discipline.video")}</span
       >
       <span
         class="w-1 h-1 rounded-full bg-(--red) opacity-50"
         aria-hidden="true"></span>
       <span
         class="text-xs tracking-widest uppercase text-(--muted)"
-        role="listitem">Diseño</span
+        role="listitem">{t("hero.discipline.design")}</span
       >
     </div>
     <p
       class="cormorant-garamond-italic text-2xl italic font-light text-(--gold) mt-7 max-w-md leading-6"
     >
-      Capturo lo que los ojos no se atreven a sostener demasiado tiempo.
+      {t("hero.tagline")}
     </p>
     <div
       class="mt-14 flex items-center gap-3 text-xs uppercase text-(--muted)"
       aria-hidden="true"
     >
       <span class="w-0.5 h-11 bg-(--red) animate-pulse"></span>
-      Explorar
+      {t("hero.explore")}
     </div>
   </div>
 </section>
