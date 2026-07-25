@@ -17,7 +17,7 @@ images:
 description:
   es: >-
     Serie conceptual inspirada en la estética de las trabajadoras sexuales de la década
-    de 1940. A través de la dirección de arte, el vestiuario y la iluminación, las
+    de 1940. A través de la dirección de arte, el vestuario y la iluminación, las
     imágenes exploran la dualidad entre la fortaleza y la vulnerabilidad femenina desde
     una mirada cinematográfica. <strong>Modelo:</strong> Isabel Vertel.
   en: >-
