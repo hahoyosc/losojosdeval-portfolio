@@ -1,10 +1,11 @@
 ---
 title:
   es: Delitos electorales
+  en: Electoral offenses
 category: video
 subtitle:
   es: Reel para Instagram
-  en: Reel for Instagram
+  en: Instagram reel
 year: 2024
 video:
   src: /videos/incumplimiento-vallas.webm

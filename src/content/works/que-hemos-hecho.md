@@ -1,10 +1,11 @@
 ---
 title:
   es: Lo que construimos
+  en: What we have done at Todos por Medellín
 category: video
 subtitle:
   es: Reel para Instagram
-  en: Reel for Instagram
+  en: Instagram reel
 year: 2025
 video:
   src: /videos/que-hemos-hecho.webm

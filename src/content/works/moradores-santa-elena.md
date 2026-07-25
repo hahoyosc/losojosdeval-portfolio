@@ -1,9 +1,11 @@
 ---
 title:
   es: Moradores de Santa Elena
+  en: Residents of Santa Elena
 category: video
 subtitle:
-  es: Documental · Storytelling
+  es: Documental
+  en: Documentary
 year: 2023
 video:
   src: /videos/moradores-santa-elena.webm

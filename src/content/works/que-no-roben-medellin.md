@@ -1,9 +1,11 @@
 ---
 title:
   es: Que no se roben a Medellín
+  en: Don't let them steal Medellín
 category: video
 subtitle:
   es: Campaña
+  en: Campaign
 year: 2022
 video:
   src: /videos/que-no-roben-medellin.webm

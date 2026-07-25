@@ -1,22 +1,24 @@
 ---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const services = [
   {
-    discipline: "Fotografía",
-    title: "Retrato & editorial",
-    description:
-      "Sesiones personales y para marcas que quieren imágenes con criterio propio. Sin poses genéricas. Sin fondos blancos sin alma.",
+    discipline: t("services.video.discipline"),
+    title: t("services.video.title"),
+    description: t("services.video.description"),
   },
   {
-    discipline: "Video",
-    title: "Reels & contenido",
-    description:
-      "Producción de reels y piezas para redes. Desde la idea hasta la edición. Contenido que se ve propio, no de plantilla.",
+    discipline: t("services.photo.discipline"),
+    title: t("services.photo.title"),
+    description: t("services.photo.description"),
   },
   {
-    discipline: "Diseño",
-    title: "Identidad & editorial",
-    description:
-      "Diseño gráfico para marcas, publicaciones y proyectos independientes. Piezas que tienen un punto de vista, no solo un formato.",
+    discipline: t("services.design.discipline"),
+    title: t("services.design.title"),
+    description: t("services.design.description"),
   },
 ];
 ---
@@ -28,7 +30,7 @@ const services = [
       class="reveal
     text-xs tracking-widest uppercase text-(--red) mb-10 flex items-center gap-3"
     >
-      Qué ofrezco
+      {t("services.eyebrow")}
       <span class="flex-1 max-w-14 h-0.5 bg-[#C84A2F]/35"></span>
     </p>
     <div

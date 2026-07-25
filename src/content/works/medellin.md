@@ -1,9 +1,11 @@
 ---
 title:
-  es: Medellín, contada por su gente
+  es: Vivir Medellín
+  en: The voices of Medellín
 category: video
 subtitle:
-  es: Campaña
+  es: Documental
+  en: Documentary
 year: 2025
 video:
   src: /videos/medellin.webm

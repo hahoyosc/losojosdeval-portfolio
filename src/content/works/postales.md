@@ -7,16 +7,19 @@ subtitle:
   es: Diseño editorial
   en: Editorial design
 year: 2026
+randomize: false
 images:
-  - src: ../../assets/work/contar-historias/postal-1.webp
+  - src: ../../assets/work/postales/postal-0.webp
     orientation: portrait
-  - src: ../../assets/work/contar-historias/postal-2.webp
+  - src: ../../assets/work/postales/postal-1.webp
     orientation: portrait
-  - src: ../../assets/work/contar-historias/postal-3.webp
+  - src: ../../assets/work/postales/postal-2.webp
     orientation: portrait
-  - src: ../../assets/work/contar-historias/postal-4.webp
+  - src: ../../assets/work/postales/postal-3.webp
     orientation: portrait
-  - src: ../../assets/work/contar-historias/postal-5.webp
+  - src: ../../assets/work/postales/postal-4.webp
+    orientation: portrait
+  - src: ../../assets/work/postales/postal-5.webp
     orientation: landscape
 description:
   es: >-

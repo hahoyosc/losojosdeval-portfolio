@@ -1,6 +1,7 @@
 ---
 title:
-  es: Que hemos hecho en 2024 - Todos por Medellín
+  es: 100 días de gobierno
+  en: 100 days in office
 category: video
 subtitle:
   es: Motion graphics

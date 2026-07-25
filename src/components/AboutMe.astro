@@ -1,41 +1,38 @@
 ---
 import { Image } from "astro:assets";
 import val from "../assets/aboutme/val.webp";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section class="border-t border-(--border) py-24 px-12" id="about-me">
   <div
     class="lg:max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-start"
   >
-    <div
-      data-reveal
-      class="reveal"
-    >
+    <div data-reveal class="reveal">
       <p
         class="text-xs tracking-widest uppercase text-(--red) mb-10 flex items-center gap-3"
       >
-        Sobre mí
+        {t("about.eyebrow")}
         <span class="flex-1 max-w-14 h-0.5 bg-[#C84A2F]/35"></span>
       </p>
       <h2
         class="cormorant-garamond-normal text-6xl font-light text-(--cream) mb-8"
       >
-        Ver es<br />un acto<br /><em class="italic text-(--gold)">íntimo</em>
+        {t("about.heading.part1")}<br />{t("about.heading.part2")}<br /><em
+          class="italic text-(--gold)">{t("about.heading.part3")}</em
+        >
       </h2>
       <p class="text-sm text-(--muted) leading-6 mb-5 max-w-lg">
-        Soy Val, fotógrafa, videógrafa y diseñadora con base en Bogotá. Trabajo
-        con personas que tienen algo que decir con los ojos antes de abrir la
-        boca.
+        {t("about.paragraph1")}
       </p>
       <p class="text-sm text-(--muted) leading-6 mb-5 max-w-lg">
-        Mi proceso parte de la incomodidad — la pausa justo antes de que alguien
-        pose, el segundo donde no saben qué cara poner. Ahí suele estar la
-        imagen real.
+        {t("about.paragraph2")}
       </p>
       <p class="text-sm text-(--muted) leading-6 mb-5 max-w-lg">
-        Disparo, edito, diseño y produzco. El equipo me importa menos que la
-        intuición. Las tres disciplinas son la misma pregunta con diferente
-        forma.
+        {t("about.paragraph3")}
       </p>
     </div>
     <div

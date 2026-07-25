@@ -1,10 +1,11 @@
 ---
 title:
   es: Tres años construyendo ciudad
+  en: Three years working for our city
 category: video
 subtitle:
   es: Reel para Instagram
-  en: Reel for Instagram
+  en: Instagram reel
 year: 2025
 video:
   src: /videos/aniversario-social.webm

@@ -1,6 +1,7 @@
 ---
 title:
-  es: Acción social PAE
+  es: Voces del PAE
+  en: Voices of PAE
 category: video
 subtitle:
   es: Storytelling

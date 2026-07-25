@@ -1,9 +1,11 @@
 ---
 title:
-  es: Medellín, la ciudad que todos soñamos
+  es: La ciudad que soñamos
+  en: The city we dream of
 category: video
 subtitle:
-  es: Documental · Storytelling
+  es: Campaña
+  en: Campaign
 year: 2024
 video:
   src: /videos/manifiesto.webm

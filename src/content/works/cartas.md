@@ -1,9 +1,11 @@
 ---
 title:
   es: Cartas para confiar
+  en: Letters of trust
 category: video
 subtitle:
-  es: Documental · Storytelling
+  es: Documental
+  en: Documentary
 year: 2024
 video:
   src: /videos/cartas.webm

@@ -1,3 +1,10 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
 <section
   class="border-t border-(--border) py-32 px-12 text-center"
   id="contact"
@@ -7,12 +14,14 @@
       data-reveal
       class="cormorant-garamond-normal text-5xl md:text-9xl font-light text-(--cream) mb-7 reveal"
     >
-      Hagamos
+      {t("contact.heading.part1")}
       <br />
-      algo <em class="italic text-(--red)">real</em>
+      {t("contact.heading.part2")}
+      {lang === "en" ? <br /> : " "}
+      <em class="italic text-(--red)">{t("contact.heading.part3")}</em>
     </h2>
     <p data-reveal class="text-sm text-(--muted) mb-10 tracking-wider reveal">
-      Abierta a proyectos, colaboraciones y conversaciones.
+      {t("contact.subtitle")}
     </p>
     <a
       href="mailto:valentinaherrera.13@outlook.es"
@@ -20,6 +29,15 @@
       class="cormorant-garamond-italic inline-flex items-center gap-2.5 text-xl italic text-(--gold) no-underline
       border-b border-b-[rgba(200,146,42,0.28)] pb-0.5 hover:text-(--cream) hover:border-b-[rgba(200,146,42,0.5)] reveal"
       >valentinaherrera.13@outlook.es →</a
+    >
+    <br />
+    <a
+      href="https://www.instagram.com/losojosde_val/"
+      target="_blank"
+      data-reveal
+      class="cormorant-garamond-italic inline-flex items-center gap-2.5 text-xl italic text-(--gold) no-underline
+      border-b border-b-[rgba(200,146,42,0.28)] pb-0.5 hover:text-(--cream) hover:border-b-[rgba(200,146,42,0.5)] reveal"
+      >@losojosde_val →</a
     >
   </div>
 </section>
